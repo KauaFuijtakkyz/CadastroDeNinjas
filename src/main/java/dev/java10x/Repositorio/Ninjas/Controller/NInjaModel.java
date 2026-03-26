@@ -1,4 +1,4 @@
-package dev.java10x.Repositorio.Ninjas.Controller.Service;
+package dev.java10x.Repositorio.Ninjas.Controller;
 
 import dev.java10x.Repositorio.Missoes.MIssoesModel;
 import jakarta.persistence.*;
@@ -28,8 +28,8 @@ public class NInjaModel {
     @Column(name = "idade")
     private int idade;
 
-
-    private List<MIssoesModel> mIssoesList;
+    @OneToMany(mappedBy = "ninja")
+    private List<MIssoesModel> MissoesList;
 
     @ManyToOne
     @JoinColumn(name = "missoes_id")
