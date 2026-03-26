@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 import java.util.List;
 
 @Entity
-@Table(name = "tb_missoes")
+@Table(name = "TB_MISSOES")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -23,9 +23,6 @@ public class MIssoesModel {
     private String nome;
     private String rank;
 
-    @ManyToOne
-    @JoinColumn(name = "ninjas_id")
-    private NInjaModel ninja;
 
     @OneToMany(mappedBy = "missoes")
     private List<NInjaModel> ninjas;

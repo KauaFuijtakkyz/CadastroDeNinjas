@@ -28,8 +28,7 @@ public class NInjaModel {
     @Column(name = "idade")
     private int idade;
 
-    @OneToMany(mappedBy = "ninja")
-    private List<MIssoesModel> MissoesList;
+
 
     @ManyToOne
     @JoinColumn(name = "missoes_id")
