@@ -1,4 +1,26 @@
 package dev.java10x.Repositorio.Ninjas.Controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+@Service
 public class NInjaService {
+
+    private NinjaRepository repository;
+
+    public NInjaService(NinjaRepository repository) {
+        this.repository = repository;
+    }
+
+    public List<NInjaModel> listadeninjas(){
+        return repository.findAll();
+    }
+
+    public List<NInjaModel> listadeninjasID(){
+        return repository.findAll();
+    }
+
+
 }
