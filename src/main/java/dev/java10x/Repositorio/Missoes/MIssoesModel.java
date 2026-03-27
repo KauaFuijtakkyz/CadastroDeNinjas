@@ -21,7 +21,7 @@ public class MIssoesModel {
 
     Long id;
     private String nome;
-    private String rank;
+    private String dificuldade;
 
 
     @OneToMany(mappedBy = "missoes")
