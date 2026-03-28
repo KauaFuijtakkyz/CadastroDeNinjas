@@ -2,6 +2,7 @@ package dev.java10x.Repositorio.Missoes;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import dev.java10x.Repositorio.Ninjas.Controller.NInjaModel;
+import dev.java10x.Repositorio.Ninjas.Controller.NinjaDTO;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;

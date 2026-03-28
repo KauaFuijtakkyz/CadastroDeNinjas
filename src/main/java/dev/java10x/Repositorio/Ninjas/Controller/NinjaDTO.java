@@ -1,6 +1,9 @@
 package dev.java10x.Repositorio.Ninjas.Controller;
 
 import dev.java10x.Repositorio.Missoes.MIssoesModel;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
