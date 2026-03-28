@@ -1,18 +1,20 @@
 package dev.java10x.Repositorio.Ninjas.Controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
-
 @Service
 public class NInjaService {
 
     private NinjaRepository repository;
+    private NinjaMapper ninjaMapper;
 
-    public NInjaService(NinjaRepository repository) {
+    public NInjaService(NinjaRepository repository, NinjaMapper ninjaMapper) {
         this.repository = repository;
+        this.ninjaMapper = ninjaMapper;
     }
 
     public List<NInjaModel> listadeninjas(){
@@ -23,9 +25,12 @@ public class NInjaService {
         Optional<NInjaModel> nInjaporid = repository.findById(id);
         return nInjaporid.orElse(null);
     }
-    public NInjaModel criarNinja(NInjaModel ninja){
-        return repository.save(ninja);
+    public NinjaDTO criarNinja  (NinjaDTO ninjaDTO) {
+        NInjaModel ninja = ninjaMapper.map(ninjaDTO);
+        ninja = repository.save(ninja);
+        return ninjaMapper.map(ninja);
     }
+
     public void deletarninjaporid(Long id){
      repository.deleteById(id);
     }

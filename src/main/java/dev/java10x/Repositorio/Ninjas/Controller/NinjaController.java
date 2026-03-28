@@ -21,7 +21,7 @@ public class NinjaController {
 
     //adicionar ninja(create)
     @PostMapping("/criar")
-    public NInjaModel criarninja(@RequestBody NInjaModel nInja) {
+    public NinjaDTO criarninja(@RequestBody NinjaDTO nInja) {
         return nInjaService.criarNinja(nInja);
     }
 
