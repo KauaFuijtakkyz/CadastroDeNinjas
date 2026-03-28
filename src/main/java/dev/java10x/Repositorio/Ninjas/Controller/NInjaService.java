@@ -23,6 +23,9 @@ public class NInjaService {
         Optional<NInjaModel> nInjaporid = repository.findById(id);
         return nInjaporid.orElse(null);
     }
+    public NInjaModel criarNinja(NInjaModel ninja){
+        return repository.save(ninja);
+    }
 
 
 }
